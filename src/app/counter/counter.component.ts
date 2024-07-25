@@ -15,9 +15,9 @@ export class CounterComponent implements OnInit{
   count = signal(0);
 
   ngOnInit() {
-    setTimeout(() => {
-      this.count.set(100)
-    }, 4000);
+    // setTimeout(() => {
+    //   this.count.set(100)
+    // }, 4000);
 
     this.zone.runOutsideAngular(()=>{
       setTimeout(() => {
