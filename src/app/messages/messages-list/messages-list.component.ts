@@ -10,9 +10,12 @@ import { MessagesService } from './messages.services';
 
 })
 export class MessagesListComponent {
-  // messages = input.required<string[]>();
   private msgService = inject(MessagesService);
-  messages = this.msgService.allMessages;
+  // messages = this.msgService.allMessages;
+
+  get messages() {
+    return this.msgService.allMessages
+  }
 
   get debugOutput() {
     console.log('[MessagesList] "debugOutput" binding re-evaluated.');

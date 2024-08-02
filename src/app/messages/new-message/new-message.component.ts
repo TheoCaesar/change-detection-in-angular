@@ -11,9 +11,8 @@ import { MessagesService } from '../messages-list/messages.services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NewMessageComponent {
-  // add = output<string>();
   private msgService = inject(MessagesService)
-  enteredText = signal('');
+  enteredText = "";
 
   get debugOutput() {
     console.log('[NewMessage] "debugOutput" binding re-evaluated.');
@@ -21,8 +20,8 @@ export class NewMessageComponent {
   }
 
   onSubmit() {
-    // this.add.emit(this.enteredText());
-    this.msgService.addMessage(this.enteredText())
-    this.enteredText.set('');
+    console.log( `typed ${this.enteredText}`)
+    this.msgService.addMessage(this.enteredText)
+    this.enteredText = "";
   }
 }
